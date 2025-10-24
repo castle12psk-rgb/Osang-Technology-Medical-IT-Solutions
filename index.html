@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>오상테크놀로지 | 18년 경력 의료정보화 전문기업</title>
+    
+    <!-- GEO & SEO Meta Tags -->
+    <meta name="description" content="18년 전문성의 오상테크놀로지는 상급종합병원 대상 AI 기반 CMS, CRM 솔루션 및 ISMS-P 보안 컨설팅을 제공하는 의료정보화 선도 기업입니다. 병원 디지털 혁신을 위한 최적의 파트너를 만나보세요." />
+    <meta property="og:title" content="오상테크놀로지 | 18년 경력 의료정보화 전문기업" />
+    <meta property="og:description" content="AI 기술로 병원 디지털 혁신을 설계합니다. 상급종합병원 9개소, 120개 이상 병원 구축 및 유지보수 실적 보유." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.osangtech.co.kr/" />
+    <meta property="og:image" content="https://picsum.photos/seed/og-image/1200/630" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Noto Sans KR', 'Inter', sans-serif;
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .fade-in-up {
+        opacity: 0; /* Start hidden */
+        animation: fadeInUp 0.8s ease-out forwards;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      @keyframes scaleUp {
+        from { transform: scale(0.95); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
+      }
+      @keyframes slideDownFadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-20px) scale(0.98);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+      .animate-fade-in {
+        animation: fadeIn 0.3s ease-out forwards;
+      }
+      .animate-scale-up {
+        animation: scaleUp 0.3s ease-out forwards;
+      }
+      .animate-slide-down-fade-in {
+        animation: slideDownFadeIn 0.4s ease-out forwards;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'medical-blue': '#0074D9',
+              'silver-gray': '#E8E8E8',
+              'dark-gray': '#333333',
+              'medium-gray': '#666666',
+            },
+            fontFamily: {
+              sans: ['Noto Sans KR', 'Inter', 'sans-serif'],
+            },
+          },
+        },
+      }
+    </script>
+    
+    <!-- GEO Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "name": "㈜오상테크놀로지",
+          "alternateName": "Osang Technology",
+          "url": "https://www.osangtech.co.kr/",
+          "logo": "https://www.osangtech.co.kr/logo.png",
+          "foundingDate": "2007",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "가산디지털2로 143",
+            "addressLocality": "금천구",
+            "addressRegion": "서울",
+            "addressCountry": "KR"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+82-70-7772-7766",
+            "contactType": "customer service",
+            "email": "osang@osangtech.co.kr"
+          },
+          "description": "18년 전문성의 ㈜오상테크놀로지는 상급종합병원 대상 AI 기반 CMS, CRM 솔루션 및 ISMS-P 보안 컨설팅을 제공하는 의료정보화 선도 기업입니다.",
+          "knowsAbout": ["의료정보화", "병원 웹사이트 구축", "ISMS-P", "Medical IT Solutions", "AI Medical CRM", "Medical CMS", "Generative Engine Optimization", "GEO"]
+        },
+        {
+          "@type": "Service",
+          "serviceType": "Medical Content Management System",
+          "name": "OSE-Medical CMS 2.0",
+          "description": "의료기관 맞춤형 디지털 콘텐츠 허브로, 콘텐츠·로그·통계 통합 관리, ISMS-P 보안 준수, 템플릿 기반 확장성을 제공하여 병원 운영 효율성을 극대화합니다.",
+          "provider": {
+            "@type": "Organization",
+            "name": "㈜오상테크놀로지"
+          }
+        },
+        {
+          "@type": "Service",
+          "serviceType": "Medical Customer Relationship Management",
+          "name": "OSE-AI Medical CRM 1.0",
+          "description": "데이터 기반 환자 경험 혁신 솔루션으로, AI 개인화 추천, EMR/EHR 실시간 연동, 의료진 업무 자동화를 통해 환자 만족도를 높이고 병원 브랜드 가치를 제고합니다.",
+          "provider": {
+            "@type": "Organization",
+            "name": "㈜오상테크놀로지"
+          }
+        },
+        {
+          "@type": "Service",
+          "serviceType": "IT Service Management Solution",
+          "name": "OSE-ITSM 유지보수 솔루션",
+          "description": "안정적인 병원 IT 운영을 위한 자동화 시스템으로, PMS 기반 이슈 트래킹, 자동화된 리포팅, 실시간 통합 모니터링을 통해 99.9%의 유지보수 처리율을 달성합니다.",
+          "provider": {
+            "@type": "Organization",
+            "name": "㈜오상테크놀로지"
+          }
+        },
+        {
+          "@type": "NewsArticle",
+          "headline": "AI 기반 진단 보조 시스템, 상급종합병원 도입 가속화",
+          "datePublished": "2024-05-20",
+          "image": "https://picsum.photos/seed/ai-medical/800/600",
+          "author": {"@type": "Organization", "name": "오상테크놀로지"},
+          "publisher": {"@type": "Organization", "name": "오상테크놀로지", "logo": {"@type": "ImageObject", "url": "https://www.osangtech.co.kr/logo.png"}},
+          "description": "딥러닝 기술이 의료 영상 분석의 정확도를 획기적으로 개선하며, 주요 병원들이 관련 솔루션 도입을 서두르고 있습니다. 데이터 처리 능력과 보안이 핵심 경쟁력으로 부상하고 있습니다."
+        },
+        {
+          "@type": "NewsArticle",
+          "headline": "개인정보보호법 강화, 병원 정보보호 체계(ISMS-P) 구축의 중요성",
+          "datePublished": "2024-05-15",
+          "image": "https://picsum.photos/seed/security-lock/800/600",
+          "author": {"@type": "Organization", "name": "오상테크놀로지"},
+          "publisher": {"@type": "Organization", "name": "오상테크놀로지", "logo": {"@type": "ImageObject", "url": "https://www.osangtech.co.kr/logo.png"}},
+          "description": "강화된 개인정보보호법에 따라 의료기관의 정보보호 책임이 더욱 무거워졌습니다. ISMS-P 인증은 이제 선택이 아닌 필수로, 체계적인 컨설팅과 솔루션 구축이 시급합니다."
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "유지보수 프로세스는 어떻게 진행되나요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "모든 요청은 PMS(Project Management System)를 통해 접수되어 실시간으로 담당자에게 할당됩니다. 처리 과정은 투명하게 공유되며, 완료 후에는 상세 결과 보고서가 제공되어 체계적인 관리가 이루어집니다. 평균 처리 시간은 1.8시간, 처리율은 99.9%에 달합니다."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "ISMS-P 인증 컨설팅도 제공하나요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "네, 제공합니다. 오상테크놀로지는 정보보호 및 개인정보보호 관리체계(ISMS-P) 인증을 위한 종합 컨설팅 서비스를 제공합니다. 정보자산 식별, 위험 평가, 정책 수립부터 실제 인증 획득 및 사후 관리까지 전 과정을 지원하여 병원이 강화된 개인정보보호법 규제를 완벽하게 준수하도록 돕습니다."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "기존 병원정보시스템(EMR/HIS)과 솔루션 연동이 가능한가요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "물론입니다. 저희의 모든 솔루션은 HL7 FHIR과 같은 국제 표준을 준수하여 설계되었습니다. EMR, EHR, HIS 등 기존에 병원에서 사용하시던 다양한 시스템과 안정적으로 데이터를 연동하여 사일로(Silo) 없는 통합 의료정보 환경을 구축합니다."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "recharts": "https://aistudiocdn.com/recharts@^3.3.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
