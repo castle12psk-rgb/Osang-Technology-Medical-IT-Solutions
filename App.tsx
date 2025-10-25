@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
@@ -13,16 +13,7 @@ import Footer from './components/Footer';
 import GeoPopup from './components/GeoPopup';
 
 const App: React.FC = () => {
-  const [showPopup, setShowPopup] = useState(false);
-
-  useEffect(() => {
-    const popupShown = sessionStorage.getItem('geoPopupShown');
-    if (!popupShown) {
-      setShowPopup(true);
-      sessionStorage.setItem('geoPopupShown', 'true');
-    }
-  }, []);
-
+  const [showPopup, setShowPopup] = useState(true);
 
   return (
     <div className="bg-white text-dark-gray">
