@@ -1,5 +1,5 @@
 import React from 'react';
-import { XMarkIcon, CheckCircleIcon, ArrowRightIcon } from './Icons';
+import { XMarkIcon, ArrowRightIcon } from './Icons';
 
 const GeoPopup: React.FC<{ onClose: () => void }> = ({ onClose }) => {
     
@@ -7,58 +7,70 @@ const GeoPopup: React.FC<{ onClose: () => void }> = ({ onClose }) => {
         onClose();
         const element = document.getElementById('geo-optimization');
         if (element) {
-            // block: 'start' ensures the top of the section aligns with the top of the viewport,
-            // which often works well with a sticky header.
-            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
     };
 
     return (
         <div
-            className="fixed top-20 right-5 z-50 bg-white rounded-xl shadow-2xl w-full max-w-sm animate-slide-down-fade-in border border-gray-200/50"
+            className="fixed top-28 right-5 z-50 bg-white rounded-xl shadow-2xl w-full max-w-sm animate-slide-down-fade-in border border-gray-200/50"
             role="alertdialog"
             aria-modal="true"
             aria-labelledby="geo-popup-title"
         >
-            <div className="relative">
-                <img src="https://picsum.photos/seed/doctor-ai/400/200" alt="의료진이 최신 기술을 사용하는 모습" className="w-full h-32 object-cover rounded-t-xl" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-t-xl"></div>
-                <button onClick={onClose} className="absolute top-2 right-2 text-white bg-black/30 rounded-full p-1.5 hover:bg-black/60 transition-colors" aria-label="닫기">
+            <header className="relative h-36 rounded-t-xl overflow-hidden">
+                <img
+                    src="https://marcodamm.com/content/images/size/w2000/2025/09/Ein-Bild-von-einer-KI-und-einer-Suchmaschine.-Ich-m--chte-gerne-das-Wort-GEO-mit-einem-Bild-beschreiben.webp"
+                    alt="AI와 검색엔진이 GEO 최적화를 상징하는 이미지"
+                    className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                 <button onClick={onClose} className="absolute top-3 right-3 text-white bg-black/40 rounded-full p-1.5 hover:bg-black/60 transition-colors z-20" aria-label="닫기">
                     <XMarkIcon className="w-5 h-5" />
                 </button>
-            </div>
+            </header>
             
-            <div className="p-5">
-                <h3 id="geo-popup-title" className="text-lg font-black text-gray-800 leading-snug">
-                    다른 병원이 AI에게 추천받을 때,<br />
-                    <span className="text-medical-blue">귀 병원은 보이지 않을 수 있습니다.</span>
+            <div className="p-6 text-center">
+                <h3 id="geo-popup-title" className="text-2xl font-black text-dark-gray leading-tight" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.1)' }}>
+                    AI의 답변에 우리 병원이 없다면,
                 </h3>
-
-                <p className="mt-2 text-sm text-gray-600">
-                    생성형 AI 시대, 검색은 끝났습니다. 이제는 <strong className="text-dark-gray">'AI의 직접 답변'</strong>이 중요합니다.
+                <p className="text-xl font-bold text-medical-blue mt-1">
+                    존재하지 않는 병원과 같습니다.
                 </p>
 
-                <div className="mt-4 pt-4 border-t border-gray-200/80 space-y-2.5 text-sm">
-                    <div className="flex items-start">
-                        <CheckCircleIcon className="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                        <p className="text-gray-700"><strong className="text-dark-gray">AI의 첫번째 추천:</strong> 환자의 질문에 귀 병원을 가장 먼저 추천하도록 최적화합니다.</p>
+                <div className="mt-6 text-left bg-gray-50 p-4 rounded-xl border border-gray-200 space-y-4">
+                    {/* Before */}
+                    <div>
+                        <p className="text-sm font-bold text-medium-gray mb-1">최적화 前</p>
+                        <div className="bg-white p-3 rounded-lg shadow-sm">
+                            <p className="text-base text-gray-500">
+                                <span className="font-semibold text-gray-600">AI:</span> "A병원, B의원 등이 있습니다..."
+                            </p>
+                        </div>
                     </div>
-                    <div className="flex items-start">
-                        <CheckCircleIcon className="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                        <p className="text-gray-700"><strong className="text-dark-gray">정확한 정보 제공:</strong> 의료진, 진료과목, 실시간 예약 정보를 AI가 정확히 학습합니다.</p>
-                    </div>
-                    <div className="flex items-start">
-                        <CheckCircleIcon className="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                        <p className="text-gray-700"><strong className="text-dark-gray">미래 환자 선점:</strong> 음성 검색, AI 비서 시대의 잠재 환자를 선점하는 유일한 방법입니다.</p>
+
+                    {/* After */}
+                    <div>
+                        <p className="text-sm font-bold text-medical-blue mb-1">GEO 최적화 後</p>
+                        <div className="bg-white p-3 rounded-lg shadow-sm border-2 border-medical-blue">
+                             <p className="text-base text-dark-gray">
+                                <span className="font-semibold text-medical-blue">AI:</span> "<strong className="font-bold">[희망병원]</strong>이 가장 적합합니다."
+                            </p>
+                        </div>
                     </div>
                 </div>
+                
+                <p className="mt-6 text-base text-center text-medium-gray leading-relaxed">
+                    검색의 시대는 끝났습니다. <br/>
+                    이제 <strong className="text-dark-gray">AI가 환자를 '선택'</strong>하는 시대입니다.
+                </p>
 
                 <button 
                     onClick={scrollToGeoSection} 
-                    className="mt-5 w-full bg-medical-blue text-white px-4 py-2.5 rounded-lg hover:bg-opacity-90 transition-all duration-300 font-bold text-base flex items-center justify-center group"
+                    className="mt-6 w-full bg-medical-blue text-white px-4 py-3 rounded-lg hover:bg-opacity-90 transition-all duration-300 font-bold text-base flex items-center justify-center group shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
-                    왜 GEO가 필수인지 확인하기
-                    <ArrowRightIcon className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" />
+                    AI의 첫번째 답변 선점하기
+                    <ArrowRightIcon className="w-5 h-5 ml-2 transform group-hover:translate-x-1.5 transition-transform" />
                 </button>
             </div>
         </div>

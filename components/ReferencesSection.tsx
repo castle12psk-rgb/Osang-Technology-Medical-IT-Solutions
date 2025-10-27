@@ -55,11 +55,11 @@ const pieData = [
 const COLORS = ['#0074D9', '#005aab', '#3D9970'];
 
 const barData = [
-    { name: '서울대학교병원', 기간: 12 },
-    { name: '가톨릭중앙의료원', 기간: 10 },
-    { name: '고려대학교의료원', 기간: 8 },
-    { name: '경희대학교의료원', 기간: 5 },
-    { name: '이화여자대학교의료원', 기간: 2 },
+    { name: '가톨릭중앙의료원', 기간: 12 },
+    { name: '경희대학교의료원', 기간: 8 },
+    { name: '고려대학교의료원', 기간: 5 },
+    { name: '이화여자대학교의료원', 기간: 4 },
+    { name: '서울대학교병원', 기간: 2 },
 ];
 
 const maintenanceHighlights = [
@@ -80,63 +80,96 @@ const maintenanceHighlights = [
     }
 ];
 
+const renderLegendText = (value: string) => {
+    return <span className="text-slate-300">{value}</span>;
+};
+
+const CustomTooltip = ({ active, payload, label }: any) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="bg-slate-800/80 backdrop-blur-sm p-3 border border-white/20 rounded-lg text-sm">
+        <p className="label text-white font-bold">{`${label}`}</p>
+        <p className="intro text-medical-blue">{`${payload[0].name} : ${payload[0].value}`}</p>
+      </div>
+    );
+  }
+  return null;
+};
+
+
 const ReferencesSection: React.FC = () => {
   return (
-    <section id="references" className="py-20">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-dark-gray">의료정보화 주요 실적</h2>
-          <p className="text-lg text-medium-gray mt-2">데이터가 증명하는 오상테크놀로지의 전문성</p>
+    <section id="references" className="relative py-20 text-white bg-gray-900 overflow-hidden">
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-fixed"
+        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=2670&auto=format&fit=crop')" }}
+      ></div>
+      <div className="absolute inset-0 bg-slate-900/80 backdrop-blur-sm"></div>
+
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-white">의료정보화 주요 실적</h2>
+          <p className="text-lg text-slate-300 mt-2">데이터가 증명하는 오상테크놀로지의 전문성</p>
           <div className="w-20 h-1 bg-medical-blue mx-auto mt-4"></div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
-          <div className="bg-white p-6 rounded-lg shadow-lg">
-            <h3 className="text-xl font-bold text-center mb-4">병원 유형별 점유율</h3>
+        <div className="grid lg:grid-cols-2 gap-12 mb-20">
+          <div className="bg-slate-800/30 backdrop-blur-lg rounded-xl p-8 border border-white/10">
+            <h3 className="text-xl font-bold text-center mb-4 text-white">병원 유형별 점유율</h3>
             <ResponsiveContainer width="100%" height={300}>
               <PieChart>
-                <Pie data={pieData} cx="50%" cy="50%" labelLine={false} outerRadius={120} fill="#8884d8" dataKey="value" label={({ name, percent }) => `${name} ${((Number(percent) || 0) * 100).toFixed(0)}%`}>
+                <Pie 
+                  data={pieData} 
+                  cx="50%" 
+                  cy="50%" 
+                  labelLine={false} 
+                  outerRadius={120} 
+                  fill="#E8E8E8" 
+                  dataKey="value" 
+                  // FIX: The `percent` prop from recharts can be undefined, which causes a TypeScript error during arithmetic operations. Coalesce to 0 to prevent this.
+                  label={({ name, percent }) => `${name} ${((percent || 0) * 100).toFixed(0)}%`}
+                >
                   {pieData.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)}
                 </Pie>
-                <Tooltip />
+                <Tooltip content={<CustomTooltip />} />
               </PieChart>
             </ResponsiveContainer>
-            <div className="mt-4 pt-4 border-t border-silver-gray space-y-3">
-              <div className="flex items-center p-3 bg-gray-50 rounded-lg">
+            <div className="mt-4 pt-4 border-t border-white/10 space-y-3">
+              <div className="flex items-center p-3 bg-slate-900/50 rounded-lg">
                   <TrophyIcon className="w-10 h-10 text-medical-blue mr-4 flex-shrink-0" />
                   <div>
-                      <h4 className="font-bold text-dark-gray">독보적 기술력</h4>
-                      <p className="text-sm text-medium-gray">상급종합병원 시장 점유율로 증명된 기술 전문성</p>
+                      <h4 className="font-bold text-white">독보적 기술력</h4>
+                      <p className="text-sm text-slate-300">상급종합병원 시장 점유율로 증명된 기술 전문성</p>
                   </div>
               </div>
-              <div className="flex items-center p-3 bg-gray-50 rounded-lg">
+              <div className="flex items-center p-3 bg-slate-900/50 rounded-lg">
                   <ShieldCheckIcon className="w-10 h-10 text-medical-blue mr-4 flex-shrink-0" />
                   <div>
-                      <h4 className="font-bold text-dark-gray">검증된 안정성</h4>
-                      <p className="text-sm text-medium-gray">주요 대학병원과의 장기 계약이 보증하는 압도적 신뢰</p>
+                      <h4 className="font-bold text-white">검증된 안정성</h4>
+                      <p className="text-sm text-slate-300">주요 대학병원과의 장기 계약이 보증하는 압도적 신뢰</p>
                   </div>
               </div>
             </div>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-lg">
-            <h3 className="text-xl font-bold text-center mb-4">상급종합병원별 유지보수 기간 (년)</h3>
+          <div className="bg-slate-800/30 backdrop-blur-lg rounded-xl p-8 border border-white/10">
+            <h3 className="text-xl font-bold text-center mb-4 text-white">상급종합병원별 유지보수 기간 (년)</h3>
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={barData} margin={{ top: 5, right: 20, left: -10, bottom: 5 }}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" angle={-15} textAnchor="end" height={60} interval={0} fontSize={11}/>
-                <YAxis />
-                <Tooltip />
-                <Legend />
+                <CartesianGrid strokeDasharray="3 3" stroke="rgba(255, 255, 255, 0.2)" />
+                <XAxis dataKey="name" angle={-15} textAnchor="end" height={60} interval={0} fontSize={11} tick={{ fill: '#a0aec0' }}/>
+                <YAxis tick={{ fill: '#a0aec0' }} />
+                <Tooltip content={<CustomTooltip />} cursor={{fill: 'rgba(255, 255, 255, 0.1)'}} />
+                <Legend formatter={renderLegendText} />
                 <Bar dataKey="기간" fill="#0074D9" />
               </BarChart>
             </ResponsiveContainer>
-             <div className="mt-4 pt-4 border-t border-silver-gray">
+             <div className="mt-4 pt-4 border-t border-white/10">
                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
                     {maintenanceHighlights.map((item, index) => (
-                        <div key={index} className="p-3 bg-gray-50 rounded-lg flex flex-col items-center justify-start">
+                        <div key={index} className="p-3 bg-slate-900/50 rounded-lg flex flex-col items-center justify-start">
                             <div className="flex-shrink-0">{item.icon}</div>
-                            <h4 className="font-bold text-sm text-dark-gray">{item.title}</h4>
-                            <p className="text-xs text-medium-gray mt-1">{item.description}</p>
+                            <h4 className="font-bold text-sm text-white">{item.title}</h4>
+                            <p className="text-xs text-slate-400 mt-1">{item.description}</p>
                         </div>
                     ))}
                  </div>
@@ -145,23 +178,23 @@ const ReferencesSection: React.FC = () => {
         </div>
 
         <div>
-          <h3 className="text-2xl font-bold text-center mb-8">주요 병원별 구축 사례</h3>
+          <h3 className="text-3xl font-bold text-center mb-12">주요 병원별 구축 사례</h3>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {hospitalCases.map((item, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 flex flex-col border border-gray-100 hover:shadow-2xl">
+              <div key={index} className="bg-slate-800/40 backdrop-blur-lg rounded-xl overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 flex flex-col border border-white/10 hover:border-medical-blue/50">
                 <img src={item.img} alt={item.name} className="w-full h-48 object-cover"/>
                 <div className="p-6 flex-grow flex flex-col">
                   <h4 className="text-xl font-bold text-medical-blue mb-2">{item.name}</h4>
-                  <p className="text-dark-gray font-semibold text-base mb-4">{item.title}</p>
-                  <p className="text-medium-gray text-sm mb-6 flex-grow">{item.details}</p>
+                  <p className="text-white font-semibold text-base mb-4">{item.title}</p>
+                  <p className="text-slate-300 text-sm mb-6 flex-grow">{item.details}</p>
                   
-                  <div className="mt-auto border-t pt-4">
-                    <h5 className="font-bold text-sm mb-3 text-dark-gray">핵심 성과</h5>
+                  <div className="mt-auto border-t border-white/10 pt-4">
+                    <h5 className="font-bold text-sm mb-3 text-white">핵심 성과</h5>
                     <ul className="space-y-2">
                       {item.highlights.map((highlight, i) => (
                         <li key={i} className="flex items-center text-sm">
                           <CheckCircleIcon className="w-5 h-5 text-medical-blue mr-2 flex-shrink-0" />
-                          <span className="text-medium-gray font-medium">{highlight}</span>
+                          <span className="text-slate-300 font-medium">{highlight}</span>
                         </li>
                       ))}
                     </ul>

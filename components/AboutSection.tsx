@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheckIcon, CloudIcon, AccessibilityIcon, BriefcaseIcon, BuildingOfficeIcon, HeadsetMicIcon, RocketLaunchIcon, TrophyIcon, SparklesIcon } from './Icons';
+import { ShieldCheckIcon, LinkIcon, SparklesIcon, BriefcaseIcon, BuildingOfficeIcon, ChartBarIcon, ArrowRightIcon } from './Icons';
 
 const AboutSection: React.FC = () => {
     
@@ -8,56 +8,41 @@ const AboutSection: React.FC = () => {
       icon: <BriefcaseIcon />,
       value: "18년 이상",
       label: "의료 IT 전문성",
-      img: 'https://picsum.photos/seed/ITexpert/400/300'
+      img: 'https://cdn.aitimes.kr/news/photo/201811/12758_12919_2139.jpg'
     },
     {
       icon: <BuildingOfficeIcon />,
       value: "120+",
       label: "병원 고객사",
-      img: 'https://picsum.photos/seed/hospitalbldg/400/300'
+      img: 'https://www.unite.ai/wp-content/uploads/2024/06/Med-Gemini-3.webp'
     },
     {
-      icon: <HeadsetMicIcon />,
+      icon: <ChartBarIcon />,
       value: "99.9%",
-      label: "기술지원 만족도",
-      img: 'https://picsum.photos/seed/supportteam/400/300'
+      label: "유지보수 만족도",
+      img: 'https://www.worklaw.co.kr/ja_data/upload/intranet/worklaw/images/pjt8.jpg'
     }
   ];
 
-  const historyPhases = [
+  const coreValues = [
     {
-      icon: <RocketLaunchIcon className="w-12 h-12 text-medical-blue" />,
-      title: "1단계: 의료 IT 기반 구축",
-      period: "2007-2014",
-      milestones: [
-        "㈜오상테크놀로지 법인 설립",
-        "ISO 9001 품질경영시스템 인증 획득",
-        "서울대학교병원 첫 유지보수 계약",
-        "자체 CMS 솔루션 v1.0 개발 완료"
-      ]
+      icon: <LinkIcon />,
+      impactText: "완벽한 통합",
+      title: "의료정보시스템 연계",
+      description: "FHIR 표준 RESTful API 기반으로 EMR, PHIS 등 병원 시스템을 완벽히 연동하여 통합 디지털 환경을 구축합니다.",
     },
     {
-      icon: <TrophyIcon className="w-12 h-12 text-medical-blue" />,
-      title: "2단계: 기술 혁신 및 시장 확장",
-      period: "2015-2020",
-      milestones: [
-        "INNO-BIZ 기술혁신형 중소기업 인증",
-        "SecureKorea 2018 공공부문 대상 수상",
-        "주요 클라우드(AWS, Azure) 파트너십",
-        "고려대학교의료원 통합 웹사이트 구축"
-      ]
+      icon: <SparklesIcon />,
+      impactText: "최적의 경험",
+      title: "사용자 중심 UI/UX",
+      description: "개인화된 건강/진료정보를 제공하고, 편리한 환자 진료예약 중심 UI/UX, 시스템 통합관리(계정/진료/콘텐츠/보안 등) 를 제공합니다.",
     },
     {
-      icon: <SparklesIcon className="w-12 h-12 text-medical-blue" />,
-      title: "3단계: AI 솔루션으로 시장 선도",
-      period: "2021-현재",
-      milestones: [
-        "ISMS-P 인증 컨설팅 사업 개시",
-        "OSE-Medical CMS 2.0 출시",
-        "OSE-AI Medical CRM 솔루션 상용화",
-        "가톨릭중앙의료원 통합 유지보수 계약"
-      ]
-    }
+      icon: <ShieldCheckIcon />,
+      impactText: "철저한 보안",
+      title: "ISMS-P 인증 및 데이터 보호",
+      description: "정보보호 관리체계 인증 지원, 장애 대응 체계와 정기적인 백업 및 복구 절차를 통해 무중단 서비스와 데이터 보호를 보장합니다.",
+    },
   ];
 
   return (
@@ -76,77 +61,61 @@ const AboutSection: React.FC = () => {
                 className="relative rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300 overflow-hidden text-white bg-cover bg-center h-48 flex flex-col justify-center items-center group"
                 style={{ backgroundImage: `url(${metric.img})` }}
             >
-                <div className="absolute inset-0 bg-black/60 group-hover:bg-medical-blue/80 transition-all duration-300"></div>
+                <div className="absolute inset-0 bg-blue-900/40 group-hover:bg-medical-blue/80 transition-all duration-300"></div>
                 <div className="relative z-10 text-center">
                     {React.cloneElement(metric.icon, { className: "w-12 h-12 text-white mb-2 mx-auto" })}
-                    <p className="text-4xl font-bold" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.5)' }}>{metric.value}</p>
-                    <p className="text-md mt-1" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.5)' }}>{metric.label}</p>
+                    <p className="text-[38px] leading-tight font-bold" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.5)' }}>{metric.value}</p>
+                    <p className="text-lg mt-1" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.5)' }}>{metric.label}</p>
                 </div>
             </div>
           ))}
         </div>
 
-        <div className="grid lg:grid-cols-5 gap-12 items-start mb-16">
-          <div className="lg:col-span-3">
-            <h3 className="text-2xl font-bold mb-4">병원을 가장 잘 이해하는 기술 전문 기업</h3>
-            <p className="text-medium-gray mb-6 leading-relaxed">
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          {/* Left Column: Descriptive Text */}
+          <div className="flex flex-col">
+            <p className="text-base font-bold text-medical-blue mb-2 tracking-wider">OUR CORE IDENTITY</p>
+            <h3 className="text-3xl lg:text-4xl font-bold text-dark-gray mb-4 leading-tight">
+              병원을 <span className="text-medical-blue">가장 잘 이해하는</span><br/>
+              기술 전문 기업
+            </h3>
+            <p className="text-base lg:text-lg text-medium-gray mb-8 leading-relaxed">
               2007년 설립된 오상테크놀로지는 복잡하고 높은 보안 수준을 요구하는 의료정보화 분야의 길을 걸어왔습니다. 
               수많은 상급종합병원 및 대형병원 프로젝트를 성공적으로 수행하며 축적한 독보적인 기술력과 노하우는, 
               병원의 특수한 운영 환경과 필요를 정확히 이해하고 최적의 솔루션을 제공하는 가장 큰 자산입니다.
             </p>
+            <a 
+              href="#solutions" 
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('solutions')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="group text-medical-blue font-semibold inline-flex items-center text-base self-start py-2 px-4 rounded-lg bg-medical-blue/10 hover:bg-medical-blue/20 transition-colors"
+            >
+              솔루션 더 알아보기
+              <ArrowRightIcon className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+            </a>
           </div>
-          <div className="lg:col-span-2 space-y-4">
-              <div className="bg-white p-4 rounded-lg shadow-md flex items-center">
-                <ShieldCheckIcon className="w-10 h-10 text-medical-blue mr-4 flex-shrink-0" />
-                <div>
-                    <h4 className="font-bold">강력한 보안 체계 (ISMS-P)</h4>
-                    <p className="text-sm text-medium-gray">정보보호 관리체계 인증을 통한 데이터 보호 및 규제 준수</p>
-                </div>
-              </div>
-              <div className="bg-white p-4 rounded-lg shadow-md flex items-center">
-                <CloudIcon className="w-10 h-10 text-medical-blue mr-4 flex-shrink-0" />
-                <div>
-                    <h4 className="font-bold">안정적인 클라우드 인프라</h4>
-                    <p className="text-sm text-medium-gray">주요 클라우드 파트너십으로 유연하고 확장 가능한 시스템 제공</p>
-                </div>
-              </div>
-              <div className="bg-white p-4 rounded-lg shadow-md flex items-center">
-                <AccessibilityIcon className="w-10 h-10 text-medical-blue mr-4 flex-shrink-0" />
-                <div>
-                    <h4 className="font-bold">웹 접근성 및 표준 준수</h4>
-                    <p className="text-sm text-medium-gray">모든 사용자를 위한 포용적인 디지털 의료 정보 환경 구현</p>
-                </div>
-              </div>
-          </div>
-        </div>
-        
-        <div className="bg-white p-8 rounded-lg shadow-xl border border-gray-100">
-            <h3 className="text-2xl font-bold text-center mb-2">성장의 발자취: 단계별 혁신 스토리</h3>
-            <p className="text-center text-medium-gray mb-8">오상테크놀로지는 명확한 비전 아래 지속적인 성장을 거듭해왔습니다.</p>
-            
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {historyPhases.map((phase, index) => (
-                <div key={index} className="bg-gray-50 p-6 rounded-lg border-l-4 border-medical-blue transform hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-                  <div className="flex items-center mb-4">
-                    {phase.icon}
-                    <div className="ml-4">
-                      <h4 className="text-lg font-bold text-dark-gray">{phase.title}</h4>
-                      <p className="text-sm font-semibold text-medical-blue">{phase.period}</p>
-                    </div>
+          
+          {/* Right Column: Google-style cards */}
+          <div className="grid grid-cols-1 gap-6">
+            {coreValues.map((value, index) => (
+              <div key={index} className="bg-white p-6 rounded-xl border border-gray-200 hover:border-medical-blue hover:shadow-lg transition-all duration-300 group cursor-pointer transform hover:-translate-y-1">
+                <div className="flex items-start gap-5">
+                  <div className="bg-medical-blue/10 p-3 rounded-full flex-shrink-0 mt-1">
+                    {React.cloneElement(value.icon, { className: "w-6 h-6 text-medical-blue" })}
                   </div>
-                  <ul className="space-y-2">
-                    {phase.milestones.map((milestone, i) => (
-                      <li key={i} className="flex items-start">
-                        <span className="text-medical-blue mr-2 mt-1">&#10003;</span>
-                        <span className="text-medium-gray text-sm">{milestone}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <div>
+                    <h4 className="text-lg font-bold text-dark-gray mb-1">
+                      <span className="text-medical-blue">{value.impactText}:</span> {value.title}
+                    </h4>
+                    <p className="text-medium-gray leading-snug">{value.description}</p>
+                  </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
+          </div>
         </div>
-
       </div>
     </section>
   );
