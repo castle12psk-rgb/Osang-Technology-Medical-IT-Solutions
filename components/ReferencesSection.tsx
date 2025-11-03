@@ -1,6 +1,6 @@
 import React from 'react';
 import { ResponsiveContainer, PieChart, Pie, Cell, Tooltip, BarChart, Bar, XAxis, YAxis, CartesianGrid, Legend } from 'recharts';
-import { ShieldCheckIcon, UserGroupIcon, BookOpenIcon, TrophyIcon, CheckCircleIcon } from './Icons';
+import { ShieldCheckIcon, UserGroupIcon, BookOpenIcon, RocketLaunchIcon, CheckCircleIcon } from './Icons';
 
 const hospitalCases = [
   {
@@ -8,42 +8,42 @@ const hospitalCases = [
     title: '차세대 EMR 연동 및 데이터 기반 보안 고도화',
     details: '공공의료의 중심, 서울대학교병원의 디지털 인프라를 한 단계 격상시킨 프로젝트입니다. EMR 시스템과의 안정적인 연동을 통해 의료 데이터 활용성을 높이고, 최신 GA4 분석 및 ISMS-P 기준의 보안 체계를 구축하여 데이터 거버넌스를 강화했습니다.',
     highlights: ['실시간 EMR 연동 API 구축', 'GA4 기반 사용자 행태 분석', 'ISMS-P 인증 대응 보안 아키텍처'],
-    img: 'https://picsum.photos/seed/snuh/400/250'
+    img: 'https://www.snuh.org/asset/img/about/img_overview01.jpg'
   },
   {
     name: '고려대학교의료원',
     title: '글로벌 브랜드 아이덴티티 강화를 위한 통합 포털',
     details: '세계적 수준의 의료 서비스를 제공하는 고려대학교의료원의 위상에 걸맞는 디지털 경험을 설계했습니다. 다국어 포털, 기부금 통합 관리, 브랜드 가이드라인을 적용한 UI/UX를 통해 글로벌 환자 및 기부자와의 소통을 강화했습니다.',
     highlights: ['4개 국어 지원 다국어 포털', '온라인 기부금 통합 관리', '반응형 브랜드 UI/UX 디자인'],
-    img: 'https://picsum.photos/seed/korea/400/250'
+    img: 'https://www.kumc.or.kr/img/allmenu_section01.jpg'
   },
   {
     name: '경희의료원',
     title: '환자 중심의 의료 서비스 및 정보보호 체계 구축',
     details: '환자 편의성을 최우선으로 고려하여 EMR과 연동된 지능형 예약 시스템을 도입하고, ISMS-P 인증 기준에 부합하는 강력한 보안 체계를 마련하여 민감한 의료정보를 안전하게 보호합니다.',
     highlights: ['EMR 연동 지능형 예약 시스템', 'ISMS-P 인증 컨설팅 및 구축', '환자 맞춤형 정보 제공'],
-    img: 'https://picsum.photos/seed/kyunghee/400/250'
+    img: 'https://www.whosaeng.com/imgdata/whosaeng_com/202306/2023060915066217.jpg'
   },
   {
     name: '이화여자대학교의료원',
     title: '산하 병원 네트워크 시너지를 위한 통합 플랫폼',
     details: '이대서울병원, 목동병원 등 산하 병원의 의료정보 및 서비스를 하나의 플랫폼으로 통합하여 환자들에게 일관되고 편리한 의료 경험을 제공하고, 병원 간의 시너지를 극대화했습니다.',
     highlights: ['산하 4개 병원 정보 통합', '여성암·모아센터 특화 콘텐츠', '통합 검색 및 예약 기능'],
-    img: 'https://picsum.photos/seed/ewha/400/250'
+    img: 'https://seoul.eumc.ac.kr/upload/editor/images/000020/%EC%9D%B4%EB%8C%80%EC%84%9C%EC%9A%B8%EB%B3%91%EC%9B%90_%EC%A0%84%EA%B2%BD.jpg'
   },
   {
     name: '가톨릭중앙의료원',
     title: '국내 최대 의료 네트워크의 통합 유지보수 및 고도화',
     details: '전국 38개 병원을 아우르는 방대한 의료 네트워크의 웹 시스템을 안정적으로 통합 유지보수하며, 온라인 문진 시스템과 같은 신규 서비스를 도입하여 디지털 의료 서비스를 지속적으로 확장하고 있습니다.',
     highlights: ['38개 기관 통합 유지보수', '온라인 비대면 문진 시스템', '대규모 트래픽 분산 처리'],
-    img: 'https://picsum.photos/seed/catholic/400/250'
+    img: 'https://www.boannews.com/media/upFiles/cmc(0).jpg'
   },
   {
     name: '창원파티마병원',
     title: '지역 거점 병원의 브랜드 가치 제고 프로젝트',
     details: '병원의 새로운 CI와 마스코트를 적극 활용한 반응형 웹 디자인으로 브랜드 이미지를 강화하고, 최신 DB 아키텍처를 적용하여 시스템 안정성과 속도를 크게 향상시켰습니다.',
     highlights: ['병원 CI/BI 리뉴얼 반영', '완전 반응형 웹 디자인', 'DB 이중화 및 성능 최적화'],
-    img: 'https://picsum.photos/seed/fatima/400/250'
+    img: 'https://thumbnews.nateimg.co.kr/view610///news.nateimg.co.kr/orgImg/ck/2019/03/24/art_1553439578.jpg'
   },
 ];
 
@@ -113,7 +113,7 @@ const ReferencesSection: React.FC = () => {
           <div className="w-20 h-1 bg-medical-blue mx-auto mt-4"></div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
           <div className="bg-slate-800/30 backdrop-blur-lg rounded-xl p-8 border border-white/10">
             <h3 className="text-xl font-bold text-center mb-4 text-white">병원 유형별 점유율</h3>
             <ResponsiveContainer width="100%" height={300}>
@@ -126,8 +126,7 @@ const ReferencesSection: React.FC = () => {
                   outerRadius={120} 
                   fill="#E8E8E8" 
                   dataKey="value" 
-                  // FIX: The `percent` prop from recharts can be undefined, which causes a TypeScript error during arithmetic operations. Coalesce to 0 to prevent this.
-                  label={({ name, percent }) => `${name} ${((percent || 0) * 100).toFixed(0)}%`}
+                  label={({ name, value }) => `${name} ${value}개소`}
                 >
                   {pieData.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)}
                 </Pie>
@@ -136,7 +135,7 @@ const ReferencesSection: React.FC = () => {
             </ResponsiveContainer>
             <div className="mt-4 pt-4 border-t border-white/10 space-y-3">
               <div className="flex items-center p-3 bg-slate-900/50 rounded-lg">
-                  <TrophyIcon className="w-10 h-10 text-medical-blue mr-4 flex-shrink-0" />
+                  <RocketLaunchIcon className="w-10 h-10 text-medical-blue mr-4 flex-shrink-0" />
                   <div>
                       <h4 className="font-bold text-white">독보적 기술력</h4>
                       <p className="text-sm text-slate-300">상급종합병원 시장 점유율로 증명된 기술 전문성</p>
@@ -156,7 +155,7 @@ const ReferencesSection: React.FC = () => {
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={barData} margin={{ top: 5, right: 20, left: -10, bottom: 5 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="rgba(255, 255, 255, 0.2)" />
-                <XAxis dataKey="name" angle={-15} textAnchor="end" height={60} interval={0} fontSize={11} tick={{ fill: '#a0aec0' }}/>
+                <XAxis dataKey="name" angle={-25} textAnchor="end" height={70} interval={0} fontSize={10} tick={{ fill: '#a0aec0' }}/>
                 <YAxis tick={{ fill: '#a0aec0' }} />
                 <Tooltip content={<CustomTooltip />} cursor={{fill: 'rgba(255, 255, 255, 0.1)'}} />
                 <Legend formatter={renderLegendText} />

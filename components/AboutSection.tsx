@@ -71,7 +71,7 @@ const AboutSection: React.FC = () => {
           ))}
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
           {/* Left Column: Descriptive Text */}
           <div className="flex flex-col">
             <p className="text-base font-bold text-medical-blue mb-2 tracking-wider">OUR CORE IDENTITY</p>

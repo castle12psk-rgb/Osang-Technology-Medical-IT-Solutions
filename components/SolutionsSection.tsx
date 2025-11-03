@@ -1,5 +1,4 @@
 import React from 'react';
-// FIX: Import missing icons ChartBarIcon and ServerIcon.
 import { CmsIcon, CrmIcon, ItsmIcon, ViewGridIcon, ShieldCheckIcon, DocumentReportIcon, LightbulbIcon, LinkIcon, CogIcon, ChartBarIcon, ServerIcon, DatabaseIcon, ArrowRightIcon, UserGroupIcon, CheckCircleIcon } from './Icons';
 
 const solutions = [
@@ -160,8 +159,8 @@ const CmsArchitecture = () => (
 const ItsmArchitecture = () => (
     <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-100 h-full flex flex-col">
         <h4 className="text-lg font-bold mb-4 text-center">PMS 기반 유지보수 프로세스</h4>
-        <div className="flex-grow flex items-center justify-around text-center text-xs px-2 relative">
-             <div className="absolute top-1/2 left-8 right-8 border-t-2 border-dashed border-gray-300 -translate-y-1/2"></div>
+        <div className="flex-grow flex flex-col md:flex-row items-center md:justify-around text-center text-xs px-2 relative gap-8 md:gap-0">
+             <div className="absolute top-1/2 left-8 right-8 border-t-2 border-dashed border-gray-300 -translate-y-1/2 hidden md:block"></div>
              {/* Steps */}
              <div className="relative bg-white z-10">
                  <div className="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center mx-auto border-4 border-white"><DocumentReportIcon className="w-8 h-8 text-medium-gray"/></div>
@@ -196,7 +195,7 @@ const SolutionsSection: React.FC = () => {
           <div className="w-20 h-1 bg-medical-blue mx-auto mt-4"></div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {solutions.map((s, i) => <SolutionCard key={i} solution={s} />)}
         </div>
 
@@ -205,7 +204,7 @@ const SolutionsSection: React.FC = () => {
             <p className="text-md text-medium-gray mt-1">오상테크놀로지의 기술력이 집약된 솔루션 아키텍처를 소개합니다.</p>
         </div>
 
-        <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <CrmArchitecture />
             <CmsArchitecture />
             <ItsmArchitecture />

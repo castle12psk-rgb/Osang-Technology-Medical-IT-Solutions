@@ -1,19 +1,18 @@
 import React from 'react';
-// FIX: Import the missing ShieldCheckIcon component.
 import { 
     ServerIcon, NetworkIcon, DatabaseIcon, ShieldExclamationIcon, DocumentReportIcon, WrenchScrewdriverIcon, ChartBarIcon, ClockIcon, CheckCircleIcon, 
     ArrowRightIcon, AiChipIcon,
     ChatGptIcon, GeminiIcon, ClaudeIcon, TrophyIcon, BookOpenIcon, UserGroupIcon, ShieldCheckIcon,
-    XCircleIcon, CheckBadgeIcon, UserCircleIcon
+    XCircleIcon, CheckBadgeIcon, UserCircleIcon, ChevronDownIcon
 } from './Icons';
 
 const securityProcess = [
-  { icon: <ServerIcon />, name: '서버 진단', description: 'OS, 애플리케이션의 보안 설정 및 취약점을 정밀 분석합니다.', img: 'https://picsum.photos/seed/server-room/400/300' },
-  { icon: <NetworkIcon />, name: '네트워크 진단', description: '네트워크 장비의 구성과 서비스 포트를 분석하여 위협을 식별합니다.', img: 'https://picsum.photos/seed/network-switch/400/300' },
-  { icon: <DatabaseIcon />, name: 'DBMS 진단', description: '데이터베이스의 접근 제어 및 주요 설정값의 보안성을 검토합니다.', img: 'https://picsum.photos/seed/database-code/400/300' },
-  { icon: <ShieldExclamationIcon />, name: '보안장비 진단', description: '방화벽, IDS/IPS 등 보안 솔루션의 정책과 로그를 분석합니다.', img: 'https://picsum.photos/seed/firewall-security/400/300' },
-  { icon: <DocumentReportIcon />, name: '결과보고', description: '발견된 취약점의 위험도를 평가하고 상세 분석 보고서를 제공합니다.', img: 'https://picsum.photos/seed/security-report/400/300' },
-  { icon: <WrenchScrewdriverIcon />, name: '취약점 조치', description: '실질적인 보안 강화를 위한 기술적, 관리적 조치 계획을 수립합니다.', img: 'https://picsum.photos/seed/code-fixing/400/300' },
+  { icon: <ServerIcon />, name: '서버 진단', description: 'OS, 애플리케이션의 보안 설정 및 취약점을 정밀 분석합니다.', img: 'https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg' },
+  { icon: <NetworkIcon />, name: '네트워크 진단', description: '네트워크 장비의 구성과 서비스 포트를 분석하여 위협을 식별합니다.', img: 'https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg' },
+  { icon: <DatabaseIcon />, name: 'DBMS 진단', description: '데이터베이스의 접근 제어 및 주요 설정값의 보안성을 검토합니다.', img: 'https://images.pexels.com/photos/7988086/pexels-photo-7988086.jpeg' },
+  { icon: <ShieldExclamationIcon />, name: '보안장비 진단', description: '방화벽, IDS/IPS 등 보안 솔루션의 정책과 로그를 분석합니다.', img: 'https://images.pexels.com/photos/17489152/pexels-photo-17489152.jpeg' },
+  { icon: <DocumentReportIcon />, name: '결과보고', description: '발견된 취약점의 위험도를 평가하고 상세 분석 보고서를 제공합니다.', img: 'https://images.pexels.com/photos/95916/pexels-photo-95916.jpeg' },
+  { icon: <WrenchScrewdriverIcon />, name: '취약점 조치', description: '실질적인 보안 강화를 위한 기술적, 관리적 조치 계획을 수립합니다.', img: 'https://images.pexels.com/photos/4816921/pexels-photo-4816921.jpeg' },
 ];
 
 const stats = [
@@ -43,6 +42,13 @@ const geoBenefits = [
         title: "긍정적 평판 형성",
         description: "AI가 생성하는 병원 평판과 정보의 신뢰도를 선제적으로 관리합니다."
     }
+];
+
+const geoProcessSteps = [
+    { icon: <DocumentReportIcon className="w-10 h-10 text-medical-blue"/>, title: "Step 1. 디지털 자산 분석", description: "웹사이트, 논문, 보도자료 분석" },
+    { icon: <NetworkIcon className="w-10 h-10 text-medical-blue"/>, title: "Step 2. 지식그래프 구축", description: "AI가 이해하는 데이터 구조화" },
+    { icon: <AiChipIcon className="w-10 h-10 text-medical-blue"/>, title: "Step 3. LLM 학습 및 최적화", description: "병원 특화 데이터셋 생성" },
+    { icon: <ChartBarIcon className="w-10 h-10 text-medical-blue"/>, title: "Step 4. 모니터링 및 고도화", description: "AI 답변 품질 지속 관리" },
 ];
 
 const DashboardInfographic: React.FC = () => {
@@ -140,11 +146,8 @@ const SecuritySection: React.FC = () => {
           <div className="w-20 h-1 bg-medical-blue mx-auto mt-4"></div>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-            <div>
-                 <DashboardInfographic />
-            </div>
-            <div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+            <div className="order-2 md:order-1">
                 <h3 className="text-2xl font-bold mb-4">PMS 기반 실시간 이슈관리</h3>
                 <p className="text-medium-gray mb-6 leading-relaxed">
                     자체 보유한 PMS(Project Management System)를 통해 모든 유지보수 요청 및 이슈를 실시간으로 추적하고 관리합니다. 병원 담당자는 처리 현황을 투명하게 확인하고, 저희는 데이터를 기반으로 신속하고 정확하게 대응하여 <strong className="text-medical-blue">최고 수준의 시스템 가용성을 보장합니다.</strong>
@@ -159,19 +162,16 @@ const SecuritySection: React.FC = () => {
                     ))}
                 </div>
             </div>
+            <div className="order-1 md:order-2">
+                 <DashboardInfographic />
+            </div>
         </div>
 
         <div id="geo-optimization" className="bg-gradient-to-br from-gray-800 to-gray-900 text-white p-8 md:p-12 rounded-2xl shadow-2xl border border-gray-700 my-16">
             <div className="text-center mb-10">
-                <div className="flex justify-center items-center gap-6 mb-6" title="ChatGPT, Google Gemini, Anthropic Claude 등 주요 AI 최적화">
-                    <div className="w-16 h-16 transform hover:scale-110 transition-transform">
-                        <ChatGptIcon className="w-full h-full" />
-                    </div>
-                    <div className="w-16 h-16 transform hover:scale-110 transition-transform">
+                <div className="flex justify-center items-center mb-6">
+                    <div className="w-24 h-24 bg-slate-800 rounded-full flex items-center justify-center border-2 border-medical-blue/50 p-4 shadow-lg transform hover:scale-110 transition-transform duration-300">
                         <GeminiIcon className="w-full h-full" />
-                    </div>
-                    <div className="w-16 h-16 transform hover:scale-110 transition-transform">
-                        <ClaudeIcon className="w-full h-full" />
                     </div>
                 </div>
                 <h3 className="text-3xl font-black text-white leading-tight">
@@ -203,52 +203,31 @@ const SecuritySection: React.FC = () => {
 
             <div className="bg-black/20 p-8 rounded-lg border border-gray-700">
                 <h4 className="text-xl font-bold text-center mb-6">오상테크놀로지의 4-Step GEO 프로세스</h4>
-                <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-center">
-                    {/* Step 1 */}
-                    <div className="flex-1 flex flex-col items-center">
-                        <div className="p-4 rounded-full bg-medical-blue/20 border-2 border-medical-blue/50 mb-2">
-                            <DocumentReportIcon className="w-10 h-10 text-medical-blue"/>
-                        </div>
-                        <p className="font-bold">Step 1. 디지털 자산 분석</p>
-                        <p className="text-xs text-silver-gray">웹사이트, 논문, 보도자료 분석</p>
-                    </div>
-                    <ArrowRightIcon className="w-8 h-8 text-gray-500 hidden md:block" />
-                    
-                    {/* Step 2 */}
-                    <div className="flex-1 flex flex-col items-center">
-                        <div className="p-4 rounded-full bg-medical-blue/20 border-2 border-medical-blue/50 mb-2">
-                            <NetworkIcon className="w-10 h-10 text-medical-blue"/>
-                        </div>
-                        <p className="font-bold">Step 2. 지식그래프 구축</p>
-                        <p className="text-xs text-silver-gray">AI가 이해하는 데이터 구조화</p>
-                    </div>
-                    <ArrowRightIcon className="w-8 h-8 text-gray-500 hidden md:block" />
-
-                    {/* Step 3 */}
-                      <div className="flex-1 flex flex-col items-center">
-                        <div className="p-4 rounded-full bg-medical-blue/20 border-2 border-medical-blue/50 mb-2">
-                            <AiChipIcon className="w-10 h-10 text-medical-blue"/>
-                        </div>
-                        <p className="font-bold">Step 3. LLM 학습 및 최적화</p>
-                        <p className="text-xs text-silver-gray">병원 특화 데이터셋 생성</p>
-                    </div>
-                      <ArrowRightIcon className="w-8 h-8 text-gray-500 hidden md:block" />
-
-                    {/* Step 4 */}
-                      <div className="flex-1 flex flex-col items-center">
-                        <div className="p-4 rounded-full bg-medical-blue/20 border-2 border-medical-blue/50 mb-2">
-                            <ChartBarIcon className="w-10 h-10 text-medical-blue"/>
-                        </div>
-                        <p className="font-bold">Step 4. 모니터링 및 고도화</p>
-                        <p className="text-xs text-silver-gray">AI 답변 품질 지속 관리</p>
-                    </div>
+                <div className="flex flex-col md:flex-row items-stretch justify-between gap-x-4 gap-y-6 text-center">
+                    {geoProcessSteps.map((step, index) => (
+                        <React.Fragment key={index}>
+                            <div className="flex-1 flex flex-col items-center">
+                                <div className="p-4 rounded-full bg-medical-blue/20 border-2 border-medical-blue/50 mb-2">
+                                    {step.icon}
+                                </div>
+                                <p className="font-bold">{step.title}</p>
+                                <p className="text-xs text-silver-gray">{step.description}</p>
+                            </div>
+                            {index < geoProcessSteps.length - 1 && (
+                                <>
+                                    <ArrowRightIcon className="w-8 h-8 text-gray-500 hidden md:block self-center" />
+                                    <ChevronDownIcon className="w-8 h-8 text-gray-500 md:hidden self-center" />
+                                </>
+                            )}
+                        </React.Fragment>
+                    ))}
                 </div>
             </div>
 
             {/* AS-IS vs TO-BE Section */}
             <div className="mt-16 pt-10 border-t border-gray-700">
                 <h4 className="text-2xl font-bold text-center mb-8">GEO 적용 전·후 비교: AI가 병원을 어떻게 인식하는가</h4>
-                <div className="grid lg:grid-cols-2 gap-8 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
                     {/* AS-IS Column */}
                     <div className="bg-gray-700/50 p-6 rounded-lg border border-red-500/30">
                         <div className="flex items-center gap-3 mb-4">
@@ -299,7 +278,7 @@ const SecuritySection: React.FC = () => {
                                 <div>
                                     <p className="font-bold text-gray-300">AI Assistant</p>
                                     <div className="text-gray-300 leading-relaxed bg-white/5 p-4 rounded-lg mt-1 border border-white/10">
-                                        <p className="mb-3">네, <strong className="font-bold text-medical-blue text-base bg-medical-blue/20 px-2 py-1 rounded">[희망병원]</strong>이 야간 소아 진료에 가장 적합합니다.</p>
+                                        <p className="mb-3"><strong className="font-bold text-medical-blue text-base bg-medical-blue/20 px-2 py-1 rounded">[희망병원]</strong>이 야간 소아 진료에 가장 적합합니다.</p>
                                         <div className="space-y-2 text-xs border-t border-gray-600 pt-2">
                                             <p><strong>• 진료과목:</strong> 소아청소년과 (야간 전문)</p>
                                             <p><strong>• 운영시간:</strong> <span className="text-green-400 font-bold">평일 22시까지, 주말 18시까지</span></p>

@@ -58,10 +58,10 @@ const HeroSection: React.FC = () => {
       <div className="absolute inset-0 bg-black bg-opacity-60"></div>
       <div className="relative z-10 p-6 max-w-5xl mx-auto">
         <h1 className="font-black mb-6 leading-tight" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
-            <span className="block text-5xl md:text-7xl mb-2 text-white fade-in-up" style={{ animationDelay: '0.2s' }}>
+            <span className="block text-4xl sm:text-5xl md:text-7xl mb-2 text-white fade-in-up" style={{ animationDelay: '0.2s' }}>
                 의료정보화 전문성과 AI 기술로,
             </span>
-            <span className="block text-4xl md:text-5xl text-silver-gray fade-in-up" style={{ animationDelay: '0.6s' }}>
+            <span className="block text-3xl sm:text-4xl md:text-5xl text-silver-gray fade-in-up" style={{ animationDelay: '0.6s' }}>
                 병원 디지털 혁신을 설계합니다.
             </span>
         </h1>

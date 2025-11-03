@@ -13,14 +13,14 @@ const GeoPopup: React.FC<{ onClose: () => void }> = ({ onClose }) => {
 
     return (
         <div
-            className="fixed top-28 right-5 z-50 bg-white rounded-xl shadow-2xl w-full max-w-sm animate-slide-down-fade-in border border-gray-200/50"
+            className="fixed inset-x-4 bottom-4 z-50 bg-white rounded-xl shadow-2xl w-full max-w-sm mx-auto animate-slide-down-fade-in border border-gray-200/50 md:inset-auto md:top-28 md:right-5 md:mx-0"
             role="alertdialog"
             aria-modal="true"
             aria-labelledby="geo-popup-title"
         >
             <header className="relative h-36 rounded-t-xl overflow-hidden">
                 <img
-                    src="https://marcodamm.com/content/images/size/w2000/2025/09/Ein-Bild-von-einer-KI-und-einer-Suchmaschine.-Ich-m--chte-gerne-das-Wort-GEO-mit-einem-Bild-beschreiben.webp"
+                    src="https://www.ourviewdesign.pt/wp-content/uploads/2025/02/O-Futuro-do-SEO-A-Revolucao-do-GEO-Generative-Engine-Optimization.jpg.webp"
                     alt="AI와 검색엔진이 GEO 최적화를 상징하는 이미지"
                     className="absolute inset-0 w-full h-full object-cover"
                 />
@@ -41,7 +41,7 @@ const GeoPopup: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                 <div className="mt-6 text-left bg-gray-50 p-4 rounded-xl border border-gray-200 space-y-4">
                     {/* Before */}
                     <div>
-                        <p className="text-sm font-bold text-medium-gray mb-1">최적화 前</p>
+                        <p className="text-sm font-bold text-medium-gray mb-1">최적화 이전</p>
                         <div className="bg-white p-3 rounded-lg shadow-sm">
                             <p className="text-base text-gray-500">
                                 <span className="font-semibold text-gray-600">AI:</span> "A병원, B의원 등이 있습니다..."
@@ -51,7 +51,7 @@ const GeoPopup: React.FC<{ onClose: () => void }> = ({ onClose }) => {
 
                     {/* After */}
                     <div>
-                        <p className="text-sm font-bold text-medical-blue mb-1">GEO 최적화 後</p>
+                        <p className="text-sm font-bold text-medical-blue mb-1">GEO 최적화 이후</p>
                         <div className="bg-white p-3 rounded-lg shadow-sm border-2 border-medical-blue">
                              <p className="text-base text-dark-gray">
                                 <span className="font-semibold text-medical-blue">AI:</span> "<strong className="font-bold">[희망병원]</strong>이 가장 적합합니다."

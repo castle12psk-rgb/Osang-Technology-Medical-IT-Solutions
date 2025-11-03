@@ -21,7 +21,7 @@ const newsItems: NewsItem[] = [
     date: '2024년 5월 20일',
     title: "<strong>AI 기반 진단 보조 시스템</strong>, 상급종합병원 도입 가속화",
     excerpt: '딥러닝 기술이 의료 영상 분석의 정확도를 획기적으로 개선하며, 주요 병원들이 관련 솔루션 도입을 서두르고 있습니다. 데이터 처리 능력과 보안이 핵심 경쟁력으로 부상하고 있습니다.',
-    img: 'https://picsum.photos/seed/ai-medical/400/250',
+    img: 'https://images.pexels.com/photos/4226264/pexels-photo-4226264.jpeg',
     link: '#',
     fullContent: {
       introduction: '인공지능(AI)이 의료 패러다임을 바꾸고 있습니다. 특히, 딥러닝 기반의 의료 영상 분석 기술은 조기 진단의 정확도를 높이고 의료진의 업무 부담을 줄이는 혁신적인 해결책으로 주목받으며, 국내 유수의 상급종합병원을 중심으로 도입이 본격화되고 있습니다.',
@@ -43,7 +43,7 @@ const newsItems: NewsItem[] = [
     date: '2024년 5월 15일',
     title: "개인정보보호법 강화, <strong>병원 정보보호 체계(ISMS-P)</strong> 구축의 중요성",
     excerpt: '강화된 개인정보보호법에 따라 의료기관의 정보보호 책임이 더욱 무거워졌습니다. ISMS-P 인증은 이제 선택이 아닌 필수로, 체계적인 컨설팅과 솔루션 구축이 시급합니다.',
-    img: 'https://picsum.photos/seed/security-lock/400/250',
+    img: 'https://cdn.prod.website-files.com/66cedbc5b5e7dfa2e2da7591/68709c1375ee756d63a36e02_MkU8MhQxcPTOdG1S1hUsEQyh4m-Iwr66RPwxcu9dvtQ.jpeg',
     link: '#',
     fullContent: {
       introduction: '디지털 전환이 가속화되면서 의료 데이터는 가장 가치 있는 자산인 동시에 가장 민감한 정보가 되었습니다. 최근 강화된 개인정보보호법은 의료기관에 더욱 엄격한 정보보호 책임을 요구하며, 정보보호 및 개인정보보호 관리체계(ISMS-P) 인증의 중요성이 그 어느 때보다 부각되고 있습니다.',
@@ -65,7 +65,7 @@ const newsItems: NewsItem[] = [
     date: '2024년 5월 10일',
     title: "비대면 진료 시대, <strong>안정적 IT 인프라</strong>가 병원의 미래를 결정한다",
     excerpt: '정부의 비대면 진료 시범사업 확대에 따라 환자 데이터의 안정적인 전송과 보관, 예약 시스템의 유연한 확장이 가능한 클라우드 기반 인프라의 중요성이 커지고 있습니다.',
-    img: 'https://picsum.photos/seed/telemedicine/400/250',
+    img: 'https://www.cynergytech.com/wp-content/uploads/2023/08/IT-Infrastructure.jpg',
     link: '#',
     fullContent: {
       introduction: '비대면 진료의 제도화는 의료 서비스의 접근성을 획기적으로 높이는 동시에, 병원 IT 인프라에 새로운 과제를 제시하고 있습니다. 환자와의 원활한 소통, 진료 데이터의 안정적인 관리, 그리고 폭증하는 트래픽을 감당할 수 있는 유연한 시스템은 이제 병원의 핵심 경쟁력입니다.',

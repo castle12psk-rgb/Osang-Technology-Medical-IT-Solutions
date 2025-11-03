@@ -90,7 +90,7 @@ const ContactSection: React.FC = () => {
   return (
     <section id="contact" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
-        <div className="bg-white p-8 rounded-lg shadow-lg border border-gray-100">
+        <div className="bg-white p-6 md:p-8 rounded-lg shadow-lg border border-gray-100">
             <h3 className="text-2xl md:text-3xl font-bold mb-8 text-center text-dark-gray">자주 묻는 질문 (FAQ)</h3>
             <div className="space-y-4">
                 {faqItems.map((item, index) => (
@@ -111,15 +111,15 @@ const ContactSection: React.FC = () => {
             <div className="w-20 h-1 bg-medical-blue mx-auto mt-4"></div>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
-            <div className="bg-white p-8 rounded-lg shadow-lg">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="bg-white p-6 md:p-8 rounded-lg shadow-lg">
               <h3 className="text-2xl font-bold mb-6">상담 신청</h3>
               <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <input type="text" name="name" placeholder="이름" value={formData.name} onChange={handleChange} className="w-full p-3 border border-silver-gray rounded-md" required />
                   <input type="text" name="hospital" placeholder="병원명" value={formData.hospital} onChange={handleChange} className="w-full p-3 border border-silver-gray rounded-md" required />
                 </div>
-                <div className="grid sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                    <input type="text" name="department" placeholder="담당부서" value={formData.department} onChange={handleChange} className="w-full p-3 border border-silver-gray rounded-md" />
                    <input type="email" name="email" placeholder="이메일" value={formData.email} onChange={handleChange} className="w-full p-3 border border-silver-gray rounded-md" required />
                 </div>
