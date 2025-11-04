@@ -311,9 +311,9 @@ const SecuritySection: React.FC = () => {
             {securityProcess.map((step, index) => (
                 <div 
                     key={index} 
-                    className="relative rounded-lg overflow-hidden border border-gray-200/50 shadow-lg transition-all duration-300 transform hover:-translate-y-1 bg-cover bg-center group min-h-[240px] flex"
-                    style={{ backgroundImage: `url(${step.img})` }}
+                    className="group relative rounded-lg overflow-hidden border border-gray-200/50 shadow-lg transition-all duration-300 transform hover:-translate-y-1 min-h-[240px] flex"
                 >
+                    <img src={step.img} alt={step.name} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent group-hover:from-black/70 transition-all duration-300"></div>
                     <div className="relative z-10 flex flex-col h-full p-6 text-white w-full justify-end">
                         <span className="absolute top-4 left-4 text-5xl font-black text-white/20 select-none">

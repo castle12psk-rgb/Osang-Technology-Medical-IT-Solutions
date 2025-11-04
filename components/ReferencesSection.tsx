@@ -43,7 +43,7 @@ const hospitalCases = [
     title: '지역 거점 병원의 브랜드 가치 제고 프로젝트',
     details: '병원의 새로운 CI와 마스코트를 적극 활용한 반응형 웹 디자인으로 브랜드 이미지를 강화하고, 최신 DB 아키텍처를 적용하여 시스템 안정성과 속도를 크게 향상시켰습니다.',
     highlights: ['병원 CI/BI 리뉴얼 반영', '완전 반응형 웹 디자인', 'DB 이중화 및 성능 최적화'],
-    img: 'https://thumbnews.nateimg.co.kr/view610///news.nateimg.co.kr/orgImg/ck/2019/03/24/art_1553439578.jpg'
+    img: 'https://www.fatimahosp.co.kr/displayEditorFile.do?filePath=/1/1c4586b4-5788-43cd-870b-08934c9376af'
   },
 ];
 
@@ -180,8 +180,11 @@ const ReferencesSection: React.FC = () => {
           <h3 className="text-3xl font-bold text-center mb-12">주요 병원별 구축 사례</h3>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {hospitalCases.map((item, index) => (
-              <div key={index} className="bg-slate-800/40 backdrop-blur-lg rounded-xl overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 flex flex-col border border-white/10 hover:border-medical-blue/50">
-                <img src={item.img} alt={item.name} className="w-full h-48 object-cover"/>
+              <div key={index} className="group bg-slate-800/40 backdrop-blur-lg rounded-xl overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 flex flex-col border border-white/10 hover:border-medical-blue/50">
+                <div className="relative h-48 overflow-hidden">
+                    <img src={item.img} alt={item.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"/>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                </div>
                 <div className="p-6 flex-grow flex flex-col">
                   <h4 className="text-xl font-bold text-medical-blue mb-2">{item.name}</h4>
                   <p className="text-white font-semibold text-base mb-4">{item.title}</p>

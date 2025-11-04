@@ -86,7 +86,10 @@ const newsItems: NewsItem[] = [
 
 const NewsCard: React.FC<{ item: NewsItem; onReadMore: () => void; }> = ({ item, onReadMore }) => (
   <div className="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 flex flex-col group border hover:shadow-xl">
-    <img src={item.img} alt={item.title} className="w-full h-48 object-cover" />
+    <div className="relative h-48 overflow-hidden">
+      <img src={item.img} alt={item.title.replace(/<[^>]*>?/gm, '')} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+    </div>
     <div className="p-6 flex flex-col flex-grow">
       <div className="flex justify-between items-center mb-3">
         <span className="bg-medical-blue/10 text-medical-blue text-xs font-semibold px-3 py-1 rounded-full">{item.category}</span>

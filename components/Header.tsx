@@ -51,7 +51,7 @@ const Header: React.FC = () => {
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerBgClass}`}>
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
           <div className="text-2xl font-bold text-medical-blue cursor-pointer" onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); setIsMenuOpen(false); }}>
-            OSANG<span className={`${textColorClass} transition-colors duration-300`}>TECH</span>
+            OSANG<span className={`${textColorClass} transition-colors duration-300`}> TECHNOLOGY</span>
           </div>
           <nav className="hidden md:flex space-x-6">
             {navLinks.map((link) => (
