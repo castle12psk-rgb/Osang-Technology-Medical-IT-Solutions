@@ -14,7 +14,7 @@ const AboutSection: React.FC = () => {
       icon: <BuildingOfficeIcon />,
       value: "120+",
       label: "병원 고객사",
-      img: 'https://www.unite.ai/wp-content/uploads/2024/06/Med-Gemini-3.webp'
+      img: 'https://images.pexels.com/photos/8943099/pexels-photo-8943099.jpeg'
     },
     {
       icon: <ChartBarIcon />,
@@ -61,7 +61,7 @@ const AboutSection: React.FC = () => {
                 className="relative rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300 overflow-hidden text-white h-48 flex flex-col justify-center items-center group"
             >
                 <img src={metric.img} alt={metric.label} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/70 via-blue-900/40 to-transparent transition-all duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-950/90 via-blue-950/60 to-blue-950/20 transition-all duration-300"></div>
                 <div className="relative z-10 text-center">
                     {React.cloneElement(metric.icon, { className: "w-12 h-12 text-white mb-2 mx-auto" })}
                     <p className="text-[38px] leading-tight font-bold" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.5)' }}>{metric.value}</p>
